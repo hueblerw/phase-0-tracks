@@ -13,10 +13,12 @@
 	A branch is a new series of changes to an existant branch or master.
 	You use one whenever you are going to make changes to a project, especially if those changes are experimental.
 	Whenever starting new material (like adding a new feature or implementing an update) you start a new branch
-* What is a commit? What makes a good commit message?
+* What is a commit? 
 	A commit creates a save point along a branch and a snapshot of what is in the repository at that moment.
+* What makes a good commit message?
 	A good commit message communicates clearly and concisely the nature of changes that are being made.
 * What is a merge conflict?
 	A merge conflict occurs when two branches have diverged.
 	This means that if there is different contents in the same location of the files from two different commits
 		the computer will be confused as to which to implement and it will ask you to resolve the issue.
+		
