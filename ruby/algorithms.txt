@@ -1,0 +1,57 @@
+/* The eating algorithm */
+
+Do While you are hungry
+	Seek out food (use the closest of these options){
+		Refrigerator
+		Cupboard
+		Store
+		If an extreme emergency 
+			Trashcan
+	}
+	When food is found if food is not cooked
+		Perform the Cook sub-algorithm
+		When Food is cooked if too hot 
+			wait to cool the food
+		Else
+			Begin To Eat sub-algorithm
+
+
+Cook Sub-Algorithm{
+	Read the cooking directions
+	Go to the appropriate cooking device
+	If there is a choice of cooking devices
+		Go to the microwave cause lets face it you don't have time for this you're hungry
+	Else
+		Go to the appropriate device
+	If no device is required 
+		End here
+	Else
+		Once at the appropriate device cook for the appropriate length of time.
+		Don't mess this up.
+		If things start burning 
+			send error message "FIRE!!!!!"
+}
+
+To Eat Sub-Algorithm {
+	Take food to a table and a chair
+	Identify appropriate consumption utensils
+		spoon
+		fork
+		knife
+		fingers
+		spork
+	For Each appropriate utensil
+		Fetch the utensils
+	Then return them to food location
+	If animal is eating your food
+		gently remove them
+	Sit Down
+	Use Utensil to break food into small lumps
+	Use Utensil to insert food into mouth
+	Begin chewing
+	When chewing complete 
+		Swallow
+	Repeat until food consumed or you are no longer hungry
+	If food remaining
+		feed remainder to local animals
+}
