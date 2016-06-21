@@ -18,7 +18,7 @@ puts "Stop! You’re under arrest!".upcase
 
 puts "the usual"+" suspects"
 #=> "the usual suspects"
-# Note: you did say that + is a method so . . .
+puts "Note: you did say that + is a method so . . ."
 
 puts " suspects".prepend "the usual"
 # => "the usual suspects"
@@ -34,8 +34,8 @@ puts "Elementary,    my   dear        Watson!".squeeze(" ")
 
 puts "z".ord
 # => 122 
-# (What is the significance of the number 122 in relation to the character z?)
-# It is the ASCII character number.  That is the unique number given to this character in the ASCII format.
+puts "(What is the significance of the number 122 in relation to the character z?)"
+puts "It is the ASCII character number.  That is the unique number given to this character in the ASCII format."
 
 puts "How many times does the letter 'a' appear in this string?".count('a')
 # => 4
