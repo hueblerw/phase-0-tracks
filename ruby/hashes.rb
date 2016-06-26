@@ -58,15 +58,15 @@ if incoming != "none"
 	when "age"
 		design[:age] = (gets.chomp).to_i
 	when "num_childs"
-		design[:name] = (gets.chomp).to_i
+		design[:num_childs] = (gets.chomp).to_i
 	when "decor_theme"
-		design[:name] = gets.chomp
+		design[:decor_theme] = gets.chomp
 	when "num_couches"
-		design[:name] = (gets.chomp).to_i
+		design[:num_couches] = (gets.chomp).to_i
 	when "extra_windows"
-		design[:name] = (gets.chomp).to_i
+		design[:extra_windows] = (gets.chomp).to_i
 	when "pattern"
-		design[:name] = gets.chomp
+		design[:pattern] = gets.chomp
 	else 
 		puts "Variable not found!"
 	end
