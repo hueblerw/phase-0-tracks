@@ -55,6 +55,10 @@ for n in 0 ... firstletters.length
 		firstletters[n] = nextvowel(firstletters[n])
 		# p firstletters[n]
 	end
+	# Recapitualize if it is the first letter.
+	if n == 0
+		firstletters[n].upcase!
+	end
 end
 
 for n in 0 ... secondletters.length
@@ -65,6 +69,10 @@ for n in 0 ... secondletters.length
 		secondletters[n] = nextvowel(secondletters[n])
 		# p firstletters[n]
 	end
+	# Recapitualize if it is the first letter.
+	if n == 0
+		secondletters[n].upcase!
+	end
 end
 
 p "#{firstletters} // #{secondletters}"
@@ -72,5 +80,3 @@ p "#{firstletters} // #{secondletters}"
 alias_name = firstletters.join('') + " " + secondletters.join('')
 
 p alias_name
-
-# Recapitalize to complete.
