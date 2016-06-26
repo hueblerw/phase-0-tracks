@@ -1,6 +1,10 @@
 # First break the name string I am given into an array of two names.
 done = false
 
+agent_names = {
+
+}
+
 begin
 	puts "Please enter the agents name: "
 	name = gets.chomp
@@ -88,6 +92,11 @@ begin
 	puts "Here is the alias for the agent: "
 	puts alias_name
 
+	agent_names["#{name}" => "#{alias_name}"]
+
 end
 
 end until done
+
+puts "Here is the database of alias names.  Make sure the bad guys can't see your screen as this is TOP SECRET!"
+puts agent_names
