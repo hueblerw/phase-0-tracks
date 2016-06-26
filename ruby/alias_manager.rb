@@ -13,6 +13,8 @@ p names
 # Then break each name into letters
 firstletters = names[0].split('')
 secondletters = names[1].split('')
+p firstletters
+p secondletters
 
 # Method to advance a vowel to the next vowel in the vowel string.
 def nextvowel (vowel)
@@ -43,5 +45,16 @@ end
 # p "#{nextconsonant("b")}, #{nextconsonant("j")}, #{nextconsonant("q")}, #{nextconsonant("z")}"
 
 # Now for each letter move to the next appropriate letter.
+list_of_vowels = "aeiou"
+
+for n in 0 ... firstletters.length
+	if list_of_vowels.index(firstletters[n]) == nil
+		firstletters[n] = nextconsonant(firstletters[n])
+		p firstletters[n]
+	else
+		firstletters[n] = nextvowel(firstletters[n])
+		p firstletters[n]
+	end
+end
 
 # Recapitalize to complete.
