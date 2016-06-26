@@ -57,4 +57,20 @@ for n in 0 ... firstletters.length
 	end
 end
 
+for n in 0 ... secondletters.length
+	if list_of_vowels.index(secondletters[n]) == nil
+		secondletters[n] = nextconsonant(secondletters[n])
+		# p firstletters[n]
+	else
+		secondletters[n] = nextvowel(secondletters[n])
+		# p firstletters[n]
+	end
+end
+
+p "#{firstletters} // #{secondletters}"
+
+alias_name = firstletters.join('') + " " + secondletters.join('')
+
+p alias_name
+
 # Recapitalize to complete.
