@@ -2,7 +2,7 @@
 puts "Please enter the agents name: "
 name = gets.chomp
 # Lower case them.
-name.downcase
+name.downcase!
 
 names = name.split(' ')
 
@@ -50,10 +50,10 @@ list_of_vowels = "aeiou"
 for n in 0 ... firstletters.length
 	if list_of_vowels.index(firstletters[n]) == nil
 		firstletters[n] = nextconsonant(firstletters[n])
-		p firstletters[n]
+		# p firstletters[n]
 	else
 		firstletters[n] = nextvowel(firstletters[n])
-		p firstletters[n]
+		# p firstletters[n]
 	end
 end
 
