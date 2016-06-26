@@ -1,22 +1,22 @@
 government = {
-	"leader": "Wallace Rigor",
-	"council" = {
+	"leader" => "Wallace Rigor",
+	"council" => {
 		"treasurer": "Alotta Monee",
 		"general": "Harold T. Bombs",
 		"judge": "Dudley Do-Right"
 	}
-	"treasury": 50000,
-	"notorized_blank_paper": 12000,
+	"treasury" => 50000,
+	"notorized_blank_paper" => 12000,
 	"employees" = {
-		"Police Chief": "Mr. Handcuffs",
-		"Prison_Guard": "Gurad Prisson"
+		"Police Chief" => "Mr. Handcuffs",
+		"Prison_Guard" => "Gurad Prisson"
 	}
-	"prisoners" = [
+	"prisoners" => [
 		"Speedy McGee", 
 		"Mr. Greasylawyer", 
 		"Johnny Stealightly"
 	]
-	"cabinets": 45
+	"cabinets" => 45
 }
 
 # Return the treasurer, we need some money:
