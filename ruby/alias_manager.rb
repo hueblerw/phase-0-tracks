@@ -6,10 +6,10 @@ agent_names = {
 }
 
 begin
-	puts "Please enter the agents name: "
-	name = gets.chomp
+	puts "Please enter the agents name: (If you wish to exit please type 'quit')"
+	orig_name = gets.chomp
 	# Lower case them.
-	name.downcase!
+	name = orig_name.downcase
 	if name == "quit"
 		done = true
 	else
@@ -92,11 +92,14 @@ begin
 	puts "Here is the alias for the agent: "
 	puts alias_name
 
-	agent_names["#{name}" => "#{alias_name}"]
+	agent_names.store(orig_name, alias_name)
 
 end
 
 end until done
 
 puts "Here is the database of alias names.  Make sure the bad guys can't see your screen as this is TOP SECRET!"
-puts agent_names
+puts ""
+agent_names.each do |name, fake_name|
+	puts "#{name}: #{fake_name}"
+end
