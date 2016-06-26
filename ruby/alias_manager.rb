@@ -26,10 +26,22 @@ def nextvowel (vowel)
 	return out
 end
 
-p "#{nextvowel("a")}, #{nextvowel("e")}, #{nextvowel("i")}, #{nextvowel("o")}, #{nextvowel("u")}"
-
-otherlist = "bcdfghjklmnpqrstvwxyz"
+# p "#{nextvowel("a")}, #{nextvowel("e")}, #{nextvowel("i")}, #{nextvowel("o")}, #{nextvowel("u")}"
 
 # Do likewise for the consonants.
+def nextconsonant (consonant)
+	out = ""
+	list = "bcdfghjklmnpqrstvwxyz"
+	if consonant == "z"
+		out = "b"
+	else
+		out = list[list.index(consonant) + 1]
+	end
+	return out
+end
+
+# p "#{nextconsonant("b")}, #{nextconsonant("j")}, #{nextconsonant("q")}, #{nextconsonant("z")}"
+
+# Now for each letter move to the next appropriate letter.
 
 # Recapitalize to complete.
