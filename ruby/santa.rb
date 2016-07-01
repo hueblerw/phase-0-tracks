@@ -1,15 +1,14 @@
 class Santa
 
+	attr_reader :ethnicity
+	attr_accessor :gender, :age
+
 	def speak()
   		puts "Ho, ho, ho! Haaaappy holidays!" 
   	end
 
   	def eat_milk_and_cookies(cookie)
   		puts "That was a good #{cookie}!" 
-  	end
-
-  	def get_gender()
-  		return @gender
   	end
 
   	def celebrate_birthday()
@@ -23,10 +22,10 @@ class Santa
   		begin
   			if @reindeer_ranking[n] == reindeer
   				num = n
-  				p "#{n} / #{num}"
+  				# p "#{n} / #{num}"
   			else
   				n += 1
-  				p "#{n} #{@reindeer_ranking[n]}"
+  				# p "#{n} #{@reindeer_ranking[n]}"
   			end 
   		end until n >= @reindeer_ranking.length + 1 || num != @reindeer_ranking.length + 1
 
@@ -39,7 +38,7 @@ class Santa
   			end
   			# Place the offending reindeer in the last slot.
   			@reindeer_ranking[@reindeer_ranking.length-1] = reindeer
-  			p @reindeer_ranking
+  			# p @reindeer_ranking
   		end
   		
   	end
@@ -59,12 +58,20 @@ end
 # Mr_Santa.eat_milk_and_cookies("peanut butter cookie")
 
 santas = []
-santas << Santa.new("agender", "black")
-santas << Santa.new("female", "Latino")
-santas << Santa.new("bigender", "white")
-santas << Santa.new("male", "Japanese")
-santas << Santa.new("female", "prefer not to say")
-santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santas << Santa.new("N/A", "N/A")
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "hermaphrodite", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A", "Mexican", "Undead Dark Lord"]
+
+1200.times do
+	santas << Santa.new(example_genders[rand(example_genders.length).to_i], example_ethnicities[rand(example_ethnicities.length).to_i])
+end
+
+santas.each do |i|
+	i.age = rand(140)
+	puts "Santa is #{i.age} years old!"
+	puts "Santa is #{i.ethnicity}."
+	puts "Santa now has a #{i.gender} gender."
+end
+
+puts "Total number of Santas: 1200"
 
 santas[0].get_mad_at("Vixen")
