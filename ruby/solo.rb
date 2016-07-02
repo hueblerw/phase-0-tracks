@@ -104,6 +104,19 @@ class Tribe
 		@total_pop = sum
 	end
 
+	# Methods for calculating Work Hours tribe can do and fighting strength and murder rate.
+	def calc_work_hours()
+		(@culture["work_ethic"]/20.0) * 8.0 + 8.0
+	end
+
+	def calc_fighting_strength()
+		(@culture["violence"] * @total_pop) / 5.0
+	end
+
+	def calc_murder_rate()
+		@culture["violence"] / 2.0
+	end
+
 	# Print all the tribes info.
 	def print_tribe_info()
 		if @leader == ""
@@ -121,16 +134,47 @@ class Tribe
 			puts "#{culture}: #{num} // #{cultural_meaning(culture, num)}"
 		end
 		puts "Total Population: #{@total_pop}"
+		puts "Work-Hours Available: #{calc_work_hours}"
+		puts "Fighting Strength: #{calc_fighting_strength}"
+		puts "Murder Rate: #{calc_murder_rate} %"
 	end
 				
 end
 
-clans = {
-	"Pedro" => 24,
-	"Almaviva" => 13,
-	"Duartes" => 15
-}
+# User interface:
+# Should ask if you wish to create a tribe to start with.
+# Show the currently selected tribe.
+# Then present a menu of options: new tribe, change current tribes: leader, clans, culture, name.
 
-lombardi = Tribe.new("Lombardi", clans)
+clans = {}
 
-lombardi.print_tribe_info
+puts "Please enter the name of your tribe:"
+name = gets.chomp
+puts "How many clans would you like to add?"
+num_of_clans = gets.chomp.to_i
+num_of_clans.times do
+	puts "Please enter clan name: "
+	clan_temp = gets.chomp
+	puts "Please enter the number of people in this clan:"
+	clans[clan_temp] = gets.chomp.to_i
+end
+# When done gathering the info on the tribe initialize the new tribe and print it.
+tribes = {}
+tribes[name] = Tribe.new(name, clans)
+puts "Would you like to give this tribe a leader? (y/n)"
+if gets.chomp.downcase == "y"
+	puts "Please enter you leader's name: "
+	tribes[name].leader = gets.chomp
+end
+tribes[name].print_tribe_info
+
+# Now display the menu for your next choice.
+puts "----------"
+puts "Current Tribe: #{name}"
+puts "1. Create a new Tribe"
+puts "2. Select a different Tribe"
+puts "3. Change current tribe's leader"
+puts "4. Change the population of a clan in this tribe"
+puts "5. Change the culture of a clan in this tribe"
+puts "Enter the number of your next choice:"
+incoming = gets.chomp.to._i
