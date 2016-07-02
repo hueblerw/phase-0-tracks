@@ -1,4 +1,3 @@
-# Method to create a list
 def create_a_list(incoming_string)
 	groceries = incoming_string.split(" ")
 	groceries_list = {}
@@ -36,29 +35,30 @@ remove_item!("corn", g_list)
 change_quantity!("peas", 600, g_list)
 print_list(g_list)
 
-# input: string of items separated by spaces (example: "carrots apples cereal pizza")
-# steps: 
-  # [fill in any steps here]
-  # set default quantity
-  # print the list to the console [can you use one of your other methods here?]
-# output: [what data type goes here, array or hash?]
+# REFLECTIONS:
 
-# Method to add an item to a list
-# input: item name and optional quantity
-# steps:
-# output:
+# What did you learn about pseudocode from working on this challenge?
 
-# Method to remove an item from the list
-# input:
-# steps:
-# output:
+# The example they had gave a more detailed layout of the psuedocode than I usually do.  
+# It's something I need to learn to be more patient with.
+# Under the pressure of a gps I wanted to rush right in and get going.
 
-# Method to update the quantity of an item
-# input:
-# steps:
-# output:
+# What are the tradeoffs of using arrays and hashes for this challenge?
 
-# Method to print a list and make it look pretty
-# input:
-# steps:
-# output:
+# A hash allows you to name things more easily since you are assigning named items a number.
+# An array would probably be simpler to initially enter but to find the items contained inside it will be much more difficult.
+
+# What does a method return?
+# An object.  So either arrays hashes or variables or states.
+
+# What kind of things can you pass into methods as arguments?
+# Other objects.  So either arrays hashes or variables or states.
+
+# How can you pass information between methods?
+# By passing it through the method input and passing the relevant information out the output
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# Hashes were my weakest coming in.  I feel this definitely helped me clear up some issues with hashes.
+# I still need repetition with it.  
+# I still know I am missing a huge amount of "convention" that is supposed to be followed with the code.
+# I generally struggle to pick up conventions anyway and without having a live group of people to compare coding methods with makes that harder.
