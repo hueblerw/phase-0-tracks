@@ -40,6 +40,7 @@ class Old_Guy
 
 	def turn_lawn_chair(new_direction)
 		@direction = new_direction
+		puts "The lawn chair is now facing #{@direction}."
 	end
 
 end
