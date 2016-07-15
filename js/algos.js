@@ -30,22 +30,24 @@ function dualObjectCompare(obj1, obj2){
 	var keys1 = Object.keys(obj1);
 	var keys2 = Object.keys(obj2);
 	for (var i = 0; i < keys1.length; i++){
-		for (var j = i; j < keys2.length; j++){
+		for (var j = 0; j < keys2.length; j++){
 			if (keys1[i] == keys2[j]){
+				// console.log(keys1[i] + " / " + keys2[j] + " // " + i + ", " + j);
 				keysMatch = true;
 				matchingPairs[i] = j;
 			}
 		}
 	}
-	console.log(keysMatch + " / " + matchingPairs);
+	// console.log(keysMatch + " / " + matchingPairs);
 	// If there is no key match output false.
 	// Else check the matching keys values to see if they match.
 	var match = false;
 	if (keysMatch = true){
 		var pairs = Object.keys(matchingPairs);
 		for (var k = 0; k < pairs.length; k++){
-			console.log(obj1[keys1[pairs[k]]] + ", " + obj2[keys2[matchingPairs[k]]]);
-			if (obj1[keys1[pairs[k]]] == obj2[keys2[matchingPairs[k]]]){
+			// console.log(matchingPairs[k]);
+			console.log(obj1[keys1[pairs[k]]] + ", " + obj2[keys2[matchingPairs[pairs[k]]]]);
+			if (obj1[keys1[pairs[k]]] == obj2[keys2[matchingPairs[pairs[k]]]]){
 				match = true;
 			}
 		}
