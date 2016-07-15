@@ -93,6 +93,7 @@ function generateRandomWords(numberOfWords){
 
 console.log(longestWord(["long phrase","longest phrase","longer phrase"]));
 console.log(longestWord(["Banana", "Orange", "Apple", "Mango"]));
+console.log();
 
 // DRIVER CODE RELEASE 1
 
@@ -100,8 +101,17 @@ console.log(dualObjectCompare({name: "Steven", age: 54}, {name: "Tamir", age: 54
 console.log(dualObjectCompare({name: "Steven", age: 12}, {name: "Tamir", age: 54}));
 console.log(dualObjectCompare({name: "Steven", height: 120}, {height: 120, age: 54}));
 console.log(dualObjectCompare({name: "Barbara", height: 80, age: 43}, {height: 120, age: 54, name: "Kevin"}));
+console.log();
 
 // DRIVER CODE RELEASE 2
 
-console.log(generateRandomWords(4));
-console.log(generateRandomWords(7));
+// console.log(generateRandomWords(4));
+// console.log(generateRandomWords(7));
+
+// So ten times generate a word list.
+// Then find the longest word in it and print it.
+for (var i = 0; i < 10; i++){
+	var numberOfWords = Math.floor(Math.random() * 10 + 1);
+	var test = generateRandomWords(numberOfWords);
+	console.log("Longest Word " + (i + 1) + ": " + longestWord(test));
+}
