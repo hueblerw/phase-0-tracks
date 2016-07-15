@@ -44,7 +44,8 @@ function dualObjectCompare(obj1, obj2){
 	if (keysMatch = true){
 		var pairs = Object.keys(matchingPairs);
 		for (var k = 0; k < pairs.length; k++){
-			if (obj1[pairs[k]] == obj2[matchingPairs[k]]){
+			console.log(obj1[keys1[pairs[k]]] + ", " + obj2[keys2[matchingPairs[k]]]);
+			if (obj1[keys1[pairs[k]]] == obj2[keys2[matchingPairs[k]]]){
 				match = true;
 			}
 		}
@@ -61,3 +62,6 @@ console.log(longestWord(["Banana", "Orange", "Apple", "Mango"]));
 // DRIVER CODE RELEASE 1
 
 console.log(dualObjectCompare({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+console.log(dualObjectCompare({name: "Steven", age: 12}, {name: "Tamir", age: 54}));
+console.log(dualObjectCompare({name: "Steven", height: 120}, {height: 120, age: 54}));
+console.log(dualObjectCompare({name: "Barbara", height: 80, age: 43}, {height: 120, age: 54, name: "Kevin"}));
