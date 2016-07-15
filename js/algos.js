@@ -34,6 +34,7 @@ function dualObjectCompare(obj1, obj2){
 			if (keys1[i] == keys2[j]){
 				// console.log(keys1[i] + " / " + keys2[j] + " // " + i + ", " + j);
 				keysMatch = true;
+				// Creates an ordered pair so we don't have to recheck every value.
 				matchingPairs[i] = j;
 			}
 		}
@@ -43,15 +44,20 @@ function dualObjectCompare(obj1, obj2){
 	// Else check the matching keys values to see if they match.
 	var match = false;
 	if (keysMatch = true){
+		// gets the first values of the ordered pair.
 		var pairs = Object.keys(matchingPairs);
 		for (var k = 0; k < pairs.length; k++){
 			// console.log(matchingPairs[k]);
-			console.log(obj1[keys1[pairs[k]]] + ", " + obj2[keys2[matchingPairs[pairs[k]]]]);
+			// console.log(obj1[keys1[pairs[k]]] + ", " + obj2[keys2[matchingPairs[pairs[k]]]]);
+			// Check to see if the values of the matching keys match.
+			// Use the first number of the ordered pairs to determine obj1's key.
+			// Use the 2nd number of the ordered pairs to determine obj2's key.  Use the keys to test the values.
 			if (obj1[keys1[pairs[k]]] == obj2[keys2[matchingPairs[pairs[k]]]]){
 				match = true;
 			}
 		}
 	}
+	
 	return match;
 	
 }
