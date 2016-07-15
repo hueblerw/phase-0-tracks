@@ -57,9 +57,36 @@ function dualObjectCompare(obj1, obj2){
 			}
 		}
 	}
-	
+
 	return match;
 	
+}
+
+// RELEASE 2
+
+function generateRandomWords(numberOfWords){
+	// Do until you have enough words then return it.
+	var rand;
+	var possibleLetters = "abcdefghijklmnopqrstuvwxyz";
+	var randLetter;
+	var word = "";
+	var arrayOfWords = [];
+	for (var w = 0; w < numberOfWords; w++){
+		// Ok general idea is to create a random number from 1 to 10.  This rand is the length of the word.
+		rand = Math.floor(Math.random() * 10 + 1);
+		for (var l = 0; l < rand; l++){
+			// Then generate rand number of random characters.
+			randLetter = Math.floor(Math.random() * possibleLetters.length + 1);
+			// Concatenate them into a string.
+			word = word + possibleLetters.charAt(randLetter);
+		}
+		// Add each word to the array of words.  
+		arrayOfWords.push(word);
+		word = "";
+	}
+
+	return arrayOfWords;
+
 }
 
 // DRIVER CODE RELEASE 0
@@ -73,3 +100,8 @@ console.log(dualObjectCompare({name: "Steven", age: 54}, {name: "Tamir", age: 54
 console.log(dualObjectCompare({name: "Steven", age: 12}, {name: "Tamir", age: 54}));
 console.log(dualObjectCompare({name: "Steven", height: 120}, {height: 120, age: 54}));
 console.log(dualObjectCompare({name: "Barbara", height: 80, age: 43}, {height: 120, age: 54, name: "Kevin"}));
+
+// DRIVER CODE RELEASE 2
+
+console.log(generateRandomWords(4));
+console.log(generateRandomWords(7));
