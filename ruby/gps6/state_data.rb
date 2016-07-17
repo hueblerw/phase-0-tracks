@@ -55,5 +55,6 @@ STATE_DATA = {
   "Wisconsin" => {population_density: 105.2, population: 5726398},
   "Wyoming" => {population_density: 5.851, population: 576412}
 }
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
+
+#Contact GitHub API Training Shop Blog About
+#© 2016 GitHub, Inc. Terms Privacy Security Status Help
