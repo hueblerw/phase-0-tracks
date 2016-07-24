@@ -1,0 +1,41 @@
+# 2 -
+SELECT buisnesses.*, users.*, reviews.*
+FROM reviews
+JOIN buisnesses
+ON reviews.buisness_id=buisnesses.id
+JOIN users
+ON reviews.user_id=users.id;
+
+[Output] -
+
+1|Grundy Hollow Wedding Chapel|1|Bradford|Pitt|1|5|Good Food!|1|1
+5|Plumbing by Janet|6|Merryl|Streepman|2|3|OK Food!|5|6
+3|The Beagle Nightclub|2|Mandy|Kaling|3|1|Horrible Food!!|3|2
+
+# 3 - 
+SELECT users.firstname, users.lastname, buisnesses.name, reviews.stars, reviews.comment
+FROM reviews
+JOIN buisnesses
+ON reviews.buisness_id=buisnesses.id
+JOIN users
+ON reviews.user_id=users.id;
+
+[Output] -
+
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|Good Food!
+Merryl|Streepman|Plumbing by Janet|3|OK Food!
+Mandy|Kaling|The Beagle Nightclub|1|Horrible Food!!
+
+# 4 -
+
+SELECT buisnesses.*, users.*, reviews.*
+FROM reviews
+JOIN buisnesses
+ON reviews.buisness_id=buisnesses.id
+JOIN users
+ON reviews.user_id=users.id
+WHERE buisnesses.name="The Beagle Nightclub";
+
+[Output] - 
+
+3|The Beagle Nightclub|2|Mandy|Kaling|3|1|Horrible Food!!|3|2
