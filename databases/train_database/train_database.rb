@@ -58,6 +58,8 @@ def print_HO(db)
 	ho_trains = db.execute("SELECT * FROM ho_trains")
 	ho_trains.each do |train|
 		puts "#{train[0]} is #{kitten['age']}"
+	end
+end
 # end
 
 # One for G-scale trains
@@ -82,9 +84,9 @@ def print_HO(db)
 db = SQLite3::Database.new("trains.db")
 
 # If necessary re-initialize the database.
-start_fresh = false
+start_fresh = true
 if (start_fresh)
+	File.delete("trains.db")
+	db = SQLite3::Database.new("trains.db")
 	initialize_the_tables(db)
 end
-
-p db.execute(".table")
