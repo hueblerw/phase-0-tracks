@@ -1,0 +1,69 @@
+# 1 -
+SELECT * FROM army;
+
+1|Xandre's Group|1|4|26|2||3.7
+2|Nutwyp's Group|10|6|36|4||2.9
+3|Lugh's Group|5|6|15|1||4
+4|Mara's Group|5|4|12|5||2.7
+
+# 2 -
+UPDATE army SET num_of_men=42 WHERE name="Nutwyp's Group";
+[Gives no output]
+
+#3 -
+SELECT army.name, army.x_location, army.y_location, army.num_of_men, army.weapon, army.speed, weapons.name, weapons.attack, weapons.ranged FROM army LEFT JOIN weapons ON army.id=weapons.weapon_id;
+
+#4 - 
+SELECT army.name, army.num_of_men FROM army;
+
+Xandre's Group|26
+Nutwyp's Group|42
+Lugh's Group|15
+Mara's Group|12
+
+#5 - 
+DELETE FROM army WHERE army.name="Lugh's Group";
+
+RELEASE 3 - 
+
+# 1 - 
+There are inner and outer joins and left and right joins and Cross joins.
+I can get a cross join and an inner join but it tells me that outer and right and left joins are "currenly not supported".
+
+# 2 - 
+
+SELECT army.name, army.x_location, army.y_location, army.num_of_men, army.speed, weapons.name, weapons.attack, weapons.ranged FROM army JOIN weapons ON army.weapon=weapons.weapon_id;
+[Gives an inner join]
+
+Xandre's Group|1|4|26|3.7|stone-tipped spears|4|n
+Nutwyp's Group|10|6|42|2.9|stone-tipped clubs|5|n
+Mara's Group|5|4|12|2.7|crude sling|2|y
+
+SELECT army.name, army.x_location, army.y_location, army.num_of_men, army.weapon, army.speed, weapons.name, weapons.attack, weapons.ranged FROM army JOIN weapons;
+[Gives the effect of a cross join]
+
+Xandre's Group|1|4|26|2|3.7|wood-tipped spears|2|n
+Xandre's Group|1|4|26|2|3.7|stone-tipped spears|4|n
+Xandre's Group|1|4|26|2|3.7|log club|1|n
+Xandre's Group|1|4|26|2|3.7|stone-tipped clubs|5|n
+Xandre's Group|1|4|26|2|3.7|crude sling|2|y
+Nutwyp's Group|10|6|42|4|2.9|wood-tipped spears|2|n
+Nutwyp's Group|10|6|42|4|2.9|stone-tipped spears|4|n
+Nutwyp's Group|10|6|42|4|2.9|log club|1|n
+Nutwyp's Group|10|6|42|4|2.9|stone-tipped clubs|5|n
+Nutwyp's Group|10|6|42|4|2.9|crude sling|2|y
+Mara's Group|5|4|12|5|2.7|wood-tipped spears|2|n
+Mara's Group|5|4|12|5|2.7|stone-tipped spears|4|n
+Mara's Group|5|4|12|5|2.7|log club|1|n
+Mara's Group|5|4|12|5|2.7|stone-tipped clubs|5|n
+Mara's Group|5|4|12|5|2.7|crude sling|2|y
+
+SELECT army.name, army.num_of_men, weapons.name FROM army JOIN weapons ON army.weapon=weapons.weapon_id;
+
+Xandre's Group|26|stone-tipped spears
+Nutwyp's Group|42|stone-tipped clubs
+Mara's Group|12|crude sling
+
+SELECT army.name, army.num_of_men, weapons.name FROM army LEFT JOIN weapons ON army.weapon=weapons.weapon_id;
+
+[Supposed to be a left join but I don't see the difference.]
