@@ -11,7 +11,12 @@ UPDATE army SET num_of_men=42 WHERE name="Nutwyp's Group";
 [Gives no output]
 
 #3 -
-SELECT army.name, army.x_location, army.y_location, army.num_of_men, army.weapon, army.speed, weapons.name, weapons.attack, weapons.ranged FROM army LEFT JOIN weapons ON army.id=weapons.weapon_id;
+SELECT army.name, army.x_location, army.y_location, army.num_of_men, army.speed, weapons.name, weapons.attack, weapons.ranged FROM army JOIN weapons ON army.weapon=weapons.weapon_id;
+
+Xandre's Group|1|4|26|3.7|stone-tipped spears|4|n
+Nutwyp's Group|10|6|42|2.9|stone-tipped clubs|5|n
+Lugh's Group|5|6|15|4|wood-tipped spears|2|n
+Mara's Group|5|4|12|2.7|crude sling|2|y
 
 #4 - 
 SELECT army.name, army.num_of_men FROM army;
@@ -23,6 +28,7 @@ Mara's Group|12
 
 #5 - 
 DELETE FROM army WHERE army.name="Lugh's Group";
+[Gives no output]
 
 RELEASE 3 - 
 
