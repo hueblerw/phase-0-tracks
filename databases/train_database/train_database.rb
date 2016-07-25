@@ -222,7 +222,7 @@ end
 
 
 def createNewTrain(db, train_type)
-	puts "Creating a new #{train_type} train!"
+	puts "Creating a new #{train_type}!"
 	request = ["description", "engine_number", "quantity", "manufacturer_id", "dcc", "sound_system_id", "price_when_new", "include_sound_traxx"]
 	dataloop = []
 	request.each do |parameter|
@@ -246,10 +246,34 @@ def createNewTrain(db, train_type)
 	
 	add_train(db, train_type, '"' + dataloop[0] + '"', dataloop[1], dataloop[2], dataloop[3], '"' + dataloop[4] + '"', dataloop[5], dataloop[6], '"' + dataloop[7] + '"')
 
-	return dataloop
+	# return dataloop
 
 end
 
+
+def destroyTrain(db, train_type)
+	puts "Removing a #{train_type}!"
+	# remove_train(db, train_type, column, value)
+	request = ["description", "engine_number", "quantity", "manufacturer_id", "dcc", "sound_system_id", "price_when_new", "include_sound_traxx"]
+	puts "How would you like to identify the trains to remove?"
+	puts "By:  "
+	i = 1
+	request.each do |menu|
+		puts "#{i}. #{menu}"
+		i += 1
+	end 
+	incoming = gets.chomp.to_i
+	column = request[incoming - 1]
+	if (train_type == "HO_trains")
+		pretty_print_HO(db)
+	else
+		pretty_print_G_scale(db)
+	end
+	puts ""
+	puts "Trains with the following inputted value in #{column} will be deleted."
+	incoming = gets.chomp
+	remove_train(db, train_type, column, incoming)
+end
 
 # Requires Driver Code:
 
@@ -267,13 +291,16 @@ db = SQLite3::Database.new("trains.db")
 
 # view_only_Y_in_X(db, "HO", "y", "DCC")
 
+############################################################################
+# ACTUAL DRIVER CODE:
+
 puts "WELCOME TO THE TRAIN INVENTORY!!!"
-puts "PLEASE CHOOSE WHAT TO DO"
 
 done = false
 incoming = -1
 
 begin
+	puts "PLEASE CHOOSE WHAT TO DO:"
 	printMenu
 	incoming = gets.chomp.to_i
 	case incoming
@@ -290,10 +317,16 @@ begin
 			pretty_print_HO(db)
 		when 5 
 			# add a train
+			createNewTrain(db, "G_scale_trains")
+			pretty_print_G_scale(db)
 		when 6
 			#remove a train
+			destroyTrain(db, "HO_trains")
+			pretty_print_HO(db)
 		when 7
 			# remove a train
+			destroyTrain(db, "G_scale_trains")
+			pretty_print_G_scale(db)
 		when 8
 			done = true
 			puts "NOW QUITING!!!"
