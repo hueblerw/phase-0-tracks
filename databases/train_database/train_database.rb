@@ -235,7 +235,7 @@ def createNewTrain(db, train_type)
 		if (parameter == "manufacturer_id" || parameter == "sound_system_id")
 			printChart(db, parameter)
 		end
-		puts "Press c or C at anytime to cancel."
+		#puts "Press c or C at anytime to cancel."
 		if (parameter == "dcc" || parameter == "include_sound_traxx" || parameter == "description")
 			incoming = gets.chomp
 		else
