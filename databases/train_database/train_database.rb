@@ -121,6 +121,8 @@ end
 
 # Requires a view only with value Y in column X method.
 def view_only_Y_in_X(db, train_type, search_for, search_in)
+	puts "#{train_type} TRAINS: with only #{search_for} in #{search_in}"
+	puts ""
 	if (train_type == "G")
 		create_table_string = <<-SQL
   			SELECT G_scale_trains.description, G_scale_trains.engine_number, G_scale_trains.quantity, 
@@ -182,6 +184,19 @@ end
 
 #########################################################################
 
+# Methods for interface
+
+def printMenu
+	puts "1. View all trains"
+	puts "2. View HO trains"
+	puts "3. View G_Scale trains"
+	puts "4. Add a new HO train"
+	puts "5. Add a new G_Scale train"
+	puts "6. Remove a HO train"
+	puts "7. Remove a G_Scale train"
+	puts "8. Quit"
+end
+
 # Requires Driver Code:
 
 # Create/Select the database
@@ -197,3 +212,45 @@ db = SQLite3::Database.new("trains.db")
 # pretty_print_HO	(db)
 
 # view_only_Y_in_X(db, "HO", "y", "DCC")
+
+puts "WELCOME TO THE TRAIN INVENTORY!!!"
+puts "PLEASE CHOOSE WHAT TO DO"
+
+done = false
+incoming = -1
+
+begin
+	printMenu
+	incoming = gets.chomp.to_i
+	case incoming
+		when 1
+			pretty_print_HO(db)
+			pretty_print_G_scale(db)
+		when 2
+			pretty_print_HO(db)
+		when 3
+			pretty_print_G_scale(db)
+		when 4 
+			# add a new train
+		when 5 
+			# add a train
+		when 6
+			#remove a train
+		when 7
+			# remove a train
+		when 8
+			done = true
+			puts "NOW QUITING!!!"
+			puts "HAVE A NICE DAY!!!"
+			puts "ALL INPUTS HAVE BEEN SAVED!!!"
+		else
+			puts ""
+			puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+			puts "Invalid input!  PLEASE TRY AGAIN!"
+			puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+			puts ""
+	end
+	puts ""
+	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	puts ""
+end until done
