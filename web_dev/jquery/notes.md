@@ -24,3 +24,7 @@ $('use css syntax to call elements').on('click', function(){
 });
 
 The above creates a listener object on one or a group of elements that will perform a task when clicked upon.  We can of course do this with hover over and such like.
+
+Then I spent about 2 hours just trying to figure out how to get jquery onto the computer.  
+
+Decided to then do a picture replacement swamp action.

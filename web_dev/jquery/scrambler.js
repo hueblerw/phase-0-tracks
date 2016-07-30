@@ -10,7 +10,10 @@ console.log("This thing is working!!!");
 
 
 $(document).ready(function() {
-	$('#upperleft').on('click', function() {
-		(this).slideToggle(500);
+	$('.cat').on('click', function() {
+		$(this).fadeOut(500)
+           .delay(500)
+           .queue(function(next) { $(this).attr('src','cute_dog.jpg'); next(); })
+           .fadeIn(500); 
 	});
 });
