@@ -1,6 +1,37 @@
-.line = {
-	border-width: 10px;
-	border-color: blue;
+img{
+	border: 5px solid;
 	padding: 5px;
-	color:darkgrey;
+	border-color: #606365;
+	width:200px;
+	height:200px;
 }
+
+#pic1{
+	position: absolute;
+}
+
+#pic2{
+	position: absolute;
+	left: 232px;
+}
+
+#pic3{
+	position: absolute;
+	top: 232px;
+}
+
+#pic4 {
+	position: absolute;
+	left: 232px;
+	top: 232px;
+}
+
+#textarea {
+	position: absolute;
+	top: 464px;
+}
+
+h1 {
+	color: blue;
+}
+
