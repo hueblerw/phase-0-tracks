@@ -54,3 +54,45 @@ get '/contact/:addressline1/:addressline2' do
   address << params[:addressline2]
   response << address.to_s
 end
+
+# write a GET route that takes a person's name if present and says good job!
+
+get '/great_job' do
+  name = params["name"]
+  if(name)
+    "Good job, #{name}!!"
+  else
+    "Good job!"
+  end
+end
+
+# create a route that adds two given numbers together
+
+get '/add/:num1/:num2' do
+  num1 = params[:num1].to_i
+  num2 = params[:num2].to_i
+  math = num1 + num2
+  math.to_s
+end
+
+# call a student with a given campus from the database
+
+get '/student_search/campus/:campus' do 
+  students = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+  # display info in a pretty way
+  response = ""
+  students.each do |student|
+    response << "ID: #{student['id']}<br>"
+    response << "Name: #{student['name']}<br>"
+    response << "Age: #{student['age']}<br>"
+    response << "Campus: #{student['campus']}<br><br>"
+  end
+  response
+end
+
+# Sinatra is not the only framework out there.  Others like Ruby on Rails, Merb, Nitro, and Camping.
+
+# I found a post saying Sinatra is database-agnostic which seems to mean it can use any database system.
+
+# Web stack is the collection of software needed for web development.
+# It has an operating system, a programming language, database software and a web server.
