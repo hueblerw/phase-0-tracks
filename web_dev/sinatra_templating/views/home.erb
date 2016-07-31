@@ -13,5 +13,11 @@
       <li><%= student['name'] %>, <%= student['age'] %></li>
     <% end %>
   </ul>
+  <p>Print the weather to date below</p>
+  <ul>
+    <% @weather.each do |day| %>
+      <li><%= day['type'] %>, <%= day['temperature'] %></li>
+    <% end %>
+  </ul>
 </body>
 </html>
